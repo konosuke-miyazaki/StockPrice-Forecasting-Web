@@ -130,3 +130,6 @@ dmypy.json
 
 # secrets
 secrets/
+
+# スクレイピングしたデータはコミット対象外
+scraping_data/

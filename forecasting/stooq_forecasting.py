@@ -97,7 +97,7 @@ def main():
 
 def load_data(days):
     # 読み込むデータの保存先のパスを指定する
-    save_path = './外部データ/'
+    save_path = '././scraping_data/'
 
     # 証券コードを指定する
     # 日本株の場合は、証券コードの最後に'.JP'を付ける

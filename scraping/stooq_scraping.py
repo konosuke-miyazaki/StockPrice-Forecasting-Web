@@ -56,12 +56,12 @@ df['Body'] = df['Open'] - df['Close']
 
 print(df)
 
-# plt.figure(figsize=(10, 6))
-# plt.plot(df['Close'], label='Close', color='orange')
-# plt.xlabel('Date')
-# plt.ylabel('USD')
-# plt.legend()
-# plt.show()
+plt.figure(figsize=(10, 6))
+plt.plot(df['Close'], label='Close', color='orange')
+plt.xlabel('Date')
+plt.ylabel('USD')
+plt.legend()
+plt.show()
 
 
 # csv保存

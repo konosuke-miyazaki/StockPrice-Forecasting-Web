@@ -1,6 +1,7 @@
 from calendar import weekday
 import os
 import datetime as dt
+from datetime import timedelta
 import pandas_datareader.data as web
 import matplotlib.pyplot as plt
 
@@ -9,7 +10,7 @@ ticker_symbol = "7177"
 ticker_symbol_dr = ticker_symbol + ".JP"
 
 # 2022-01-01以降の株価取得
-start = '2022-01-01'
+start = dt.datetime(2022,1,1)
 end = dt.date.today()
 
 # データ取得
@@ -54,7 +55,7 @@ df['Close_ratio'] = (df['Close'] - df_shift['Close']) / df_shift['Close']
 # 始値と終値の差分を追加
 df['Body'] = df['Open'] - df['Close']
 
-print(df)
+
 
 plt.figure(figsize=(10, 6))
 plt.plot(df['Close'], label='Close', color='orange')
@@ -65,5 +66,5 @@ plt.show()
 
 
 # csv保存
-# df.to_csv(os.path.dirname(__file__) +
-#           '/scraping_data/s_stock_data_' + ticker_symbol + '.csv')
+df.to_csv(os.path.dirname(__file__) +
+          '/scraping_data/s_stock_data_' + ticker_symbol + '.csv')
